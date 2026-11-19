@@ -1,0 +1,21 @@
+---
+name: adressegh
+version: 1.0.1
+authors:
+- Jérémy Carolus
+description: >
+  Click a Grasshopper preview in a Rhino viewport to find where it comes from:
+  source component, output, data tree path {a;b} and item index. The component is
+  selected, centred and framed on the canvas, and one click places a Tree Item
+  that isolates the element. Canvas widget, Rhino 8 for Windows.
+icon: icon.png
+keywords:
+- grasshopper
+- data tree
+- path
+- index
+- preview
+- picking
+- debug
+- widget
+url: https://github.com/GyciH/Address-Picker

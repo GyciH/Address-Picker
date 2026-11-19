@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <TargetExt>.gha</TargetExt>
+    <AssemblyName>AdresseGH</AssemblyName>
+    <RootNamespace>AdresseGH</RootNamespace>
+    <Version>1.0.1</Version>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <NoWarn>$(NoWarn);CA1416;NU1701</NoWarn>
+    <WinDesktopRef>7.0.20</WinDesktopRef>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Grasshopper" Version="8.0.23304.9001" ExcludeAssets="runtime" />
+    <!-- Rhino 8 (Windows) fournit WinForms / System.Drawing à l'exécution : références de compilation seulement -->
+    <PackageDownload Include="Microsoft.WindowsDesktop.App.Ref" Version="[$(WinDesktopRef)]" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Windows.Forms.Primitives"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.Primitives.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Drawing.Common"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Drawing.Common.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>
