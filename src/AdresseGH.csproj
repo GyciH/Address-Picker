@@ -17,8 +17,8 @@
     <PackageDownload Include="Microsoft.WindowsDesktop.App.Ref" Version="[$(WinDesktopRef)]" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="System.Windows.Forms.Primitives"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.Primitives.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="System.Drawing.Common"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Drawing.Common.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Windows.Forms"><HintPath>$([MSBuild]::EnsureTrailingSlash($(NuGetPackageRoot)))microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Windows.Forms.Primitives"><HintPath>$([MSBuild]::EnsureTrailingSlash($(NuGetPackageRoot)))microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.Primitives.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Drawing.Common"><HintPath>$([MSBuild]::EnsureTrailingSlash($(NuGetPackageRoot)))microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Drawing.Common.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
 </Project>
