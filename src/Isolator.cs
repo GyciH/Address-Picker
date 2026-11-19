@@ -9,26 +9,27 @@ using Grasshopper.Kernel.Types;
 
 namespace AdresseGH
 {
-  /// <summary>« Isoler » : Tree Item réglé sur l'adresse + paramètre Geometry, dans un groupe.</summary>
+  /// <summary>« Isoler » : Tree Item réglé sur l'adresse + paramètre Geometry, dans un groupe.
+  /// Renvoie null si tout va bien, sinon le message d'erreur.</summary>
   public static class Isolator
   {
     public static string Isolate(GH_Canvas canvas, Hit h)
     {
       var doc = canvas?.Document;
-      if (doc == null) return "Aucune définition ouverte.";
-      if (!doc.Objects.Contains(h.Owner)) return "Le composant source n'existe plus.";
+      if (doc == null) return "No Grasshopper document.";
+      if (!doc.Objects.Contains(h.Owner)) return "Source component no longer exists.";
 
       var proxy = Grasshopper.Instances.ComponentServer.FindObjectByName("Tree Item", true, true);
       if (!(proxy?.CreateInstance() is IGH_Component item) || item.Params.Input.Count < 3)
-        return "Composant « Tree Item » introuvable.";
+        return "Tree Item component not found.";
 
       item.CreateAttributes();
-      item.NickName = "Item " + h.Address;
+      item.NickName = h.Address;
       if (!SetPersistent(item.Params.Input[1], h.Path) || !SetPersistent(item.Params.Input[2], h.Index))
-        return "Impossible de régler le chemin ou l'index.";
+        return "Could not set the Tree Item path or index.";
       item.Params.Input[0].AddSource(h.Param);
 
-      var output = new Param_Geometry { Name = "Isolé", NickName = "Isolé " + h.Address };
+      var output = new Param_Geometry { Name = "Isolated", NickName = h.Address };
       output.CreateAttributes();
       output.AddSource(item.Params.Output[0]);
 
@@ -47,7 +48,7 @@ namespace AdresseGH
 
       var group = new GH_Group
       {
-        NickName = "Isolé " + h.Address,
+        NickName = h.Address,
         Colour = System.Drawing.Color.FromArgb(120, 255, 120, 40)
       };
       group.CreateAttributes();
@@ -62,7 +63,7 @@ namespace AdresseGH
       output.Attributes.Selected = true;
       doc.NewSolution(false);
       canvas.Refresh();
-      return $"Isolé : Tree Item {h.Address} ajouté.";
+      return null;
     }
 
     /// <summary>Écrit une valeur fixe dans une entrée, quel que soit le type exact du paramètre.</summary>

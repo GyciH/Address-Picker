@@ -1,4 +1,4 @@
-# Fiche Food4Rhino : Adresse GH 1.0.1
+# Fiche Food4Rhino : Adresse GH 1.1.0
 
 Textes prêts à coller dans le formulaire « Add new app » de food4rhino.com.
 Food4Rhino est en anglais : la version anglaise sert pour la fiche, la version française peut s'ajouter sous l'anglais.
@@ -9,6 +9,7 @@ Food4Rhino est en anglais : la version anglaise sert pour la fiche, la version f
 
 | Champ | Valeur proposée |
 |---|---|
+| GUID | `6f0c7f3e-3b1e-4a3a-9b8e-2f6c1d9a4e21` |
 | Titre | **Adresse GH** (variante plus parlante à l'international : *GH Address Picker*) |
 | Type | Grasshopper plug-in |
 | Catégorie | Utilities / Data management |
@@ -41,10 +42,11 @@ Adresse GH answers that question directly from the Rhino viewport. Click any Gra
 **Features**
 
 - **Pick from Rhino**: a dedicated orange "GH" reticle replaces the cursor while picking, with object snaps turned off.
-- **Smart candidate list**: every preview under the cursor is listed, the most likely one first. Edges and curves come before faces, and objects hidden behind the first surface are filtered out (with an option to include them).
+- **Smart candidate list**: every preview under the cursor is listed, the most likely one first. Edges and curves come before faces, and objects hidden behind the first surface are filtered out (tick *Catch behind* in the right-click menu to include them).
 - **Find it on the canvas**: the source component is selected, centred and framed in orange. The geometry is highlighted in Rhino.
 - **Copy the address**: click the address block to copy `{a;b}[i]` to the clipboard.
 - **Isolate**: one click places a native *Tree Item* already set to that path and index, plus a Geometry parameter, in an orange group. Ctrl+Z undoes it.
+- **Language-free interface**: icon buttons only (pick, butterfly net to isolate, eraser to clear), no interface text.
 - **Canvas widget**: lives in a corner of the Grasshopper canvas (choose the corner with a right-click), collapses to a small header, and can be hidden from *Display › Canvas Widgets*.
 
 **Supported geometry**: points, point clouds, curves, surfaces, Breps, extrusions, meshes and SubD.
@@ -58,7 +60,6 @@ Adresse GH answers that question directly from the Rhino viewport. Click any Gra
 - Geometry only: planes, vectors, text and dimensions are ignored.
 - Clusters are seen from outside (the cluster output).
 - The address used by *Isolate* is fixed: if the tree changes upstream, it may point to another item.
-- The widget interface is in French.
 
 **Installation**
 
@@ -79,6 +80,7 @@ Adresse GH répond à cette question directement depuis le viewport Rhino. Cliqu
 - **Retrouver sur le canvas** : le composant source est sélectionné, centré et encadré en orange. La géométrie est surlignée dans Rhino.
 - **Copier l'adresse** : un clic sur le bloc adresse copie `{a;b}[i]`.
 - **Isoler** : un clic pose un *Tree Item* natif déjà réglé sur ce chemin et cet index, avec un paramètre Geometry, dans un groupe orange. Ctrl+Z annule.
+- **Interface sans texte** : boutons à icônes uniquement (pointer, filet à papillon pour isoler, gomme pour effacer).
 - **Widget de canvas** : dans un angle du canvas (au choix par clic droit), repliable, masquable via *Display › Canvas Widgets*.
 
 **Géométries prises en charge** : points, nuages de points, courbes, surfaces, Breps, extrusions, maillages et SubD.
@@ -89,6 +91,7 @@ Adresse GH répond à cette question directement depuis le viewport Rhino. Cliqu
 
 ## Historique des versions
 
+- **1.1.0** (2026-11-19) : boutons à icônes, plus aucun texte d'interface ; option *Catch behind* dans le menu clic droit.
 - **1.0.1** (2026-11-19) : bouton *Clear / Effacer* pour retirer la sélection.
 - **1.0.0** (2026-11-18) : première version.
 
@@ -98,7 +101,7 @@ Adresse GH répond à cette question directement depuis le viewport Rhino. Cliqu
 
 | Fichier | Usage |
 |---|---|
-| `AdresseGH-1.0.1.zip` | Installation manuelle (`.gha` + README anglais) |
+| `AdresseGH-1.1.0.zip` | Installation manuelle (`.gha` + README anglais) |
 | `icon_512.png` | Logo de la fiche (aussi en 256 et 64 px) |
 
 ---
