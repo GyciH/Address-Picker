@@ -10,6 +10,8 @@ Click a Grasshopper preview in a Rhino viewport to find its source component, da
 
 ---
 
+![Pick a preview in Rhino: highlighted slab, address in the widget, source component framed on the canvas](docs/screenshots/01-pick-overview.png)
+
 ## English
 
 ### What it does
@@ -25,6 +27,10 @@ The widget has no interface text, so it reads the same in any language:
 - **Isolate** (butterfly net): places a native *Tree Item* set to that path and index, plus a Geometry parameter, in an orange group (Ctrl+Z to undo).
 - **Clear** (eraser): removes the highlight, the frame and the list.
 - **Widget**: sits in a corner of the canvas (right-click to pick the corner), collapses to its header, and can be hidden or shown again from *Display › Canvas Widgets*. A ⚠ icon appears if something fails; hover it for details.
+
+- **Highlight settings** (right-click menu): colour, line width (1 to 12 px), translucent fill on/off, reset.
+
+![After Isolate: Tree Item and Geometry parameter grouped on the canvas, isolated slab in Rhino](docs/screenshots/02-isolate.png)
 
 Supported geometry: points, point clouds, curves, surfaces, Breps, extrusions, meshes and SubD.
 
@@ -55,6 +61,8 @@ Le widget n'a aucun texte d'interface : il se lit de la même façon dans toutes
 - **Isoler** (filet à papillon) : pose un *Tree Item* natif réglé sur ce chemin et cet index, avec un paramètre Geometry, dans un groupe orange (Ctrl+Z pour annuler).
 - **Effacer** (gomme) : retire le surlignage, le cadre et la liste.
 - **Widget** : dans un angle du canvas (clic droit pour choisir l'angle), repliable par son en-tête, masquable ou réaffichable via *Display › Canvas Widgets*. Une icône ⚠ apparaît en cas d'erreur ; le détail s'affiche au survol.
+
+- **Réglages du surlignage** (menu clic droit) : couleur, épaisseur (1 à 12 px), remplissage translucide, réinitialisation.
 
 ### Installation
 

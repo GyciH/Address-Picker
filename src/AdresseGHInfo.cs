@@ -13,7 +13,7 @@ namespace AdresseGH
     public override Guid Id => new Guid("6f0c7f3e-3b1e-4a3a-9b8e-2f6c1d9a4e21");
     public override string AuthorName => "Jérémy Carolus";
     public override string AuthorContact => "https://github.com/GyciH/Address-Picker";
-    public override string Version => "1.1.0";
+    public override string Version => "1.2.0";
     public override Bitmap Icon => Icons.Widget(24);
   }
 

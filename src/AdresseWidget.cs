@@ -145,11 +145,40 @@ namespace AdresseGH
         Owner?.Refresh();
       }, true, CatchBehind);
       GH_DocumentObject.Menu_AppendSeparator(menu);
+
+      // Surlignage : couleur (nuancier), épaisseur (sous-menu), remplissage.
+      var colorItem = GH_DocumentObject.Menu_AppendItem(menu, "Highlight colour");
+      GH_DocumentObject.Menu_AppendColourPicker(colorItem.DropDown, HighlightSettings.Color,
+        (sender, e) => { HighlightSettings.Color = e.Colour; Refresh(); });
+      var widthItem = GH_DocumentObject.Menu_AppendItem(menu, "Highlight width");
+      foreach (int wpx in HighlightSettings.Widths)
+      {
+        int v = wpx;
+        GH_DocumentObject.Menu_AppendItem(widthItem.DropDown, $"{v} px", (s, e) => { HighlightSettings.Width = v; Refresh(); },
+                                          true, HighlightSettings.Width == v);
+      }
+      GH_DocumentObject.Menu_AppendItem(menu, "Highlight fill", (s, e) => { HighlightSettings.Fill = !HighlightSettings.Fill; Refresh(); },
+                                        true, HighlightSettings.Fill);
+      GH_DocumentObject.Menu_AppendItem(menu, "Reset highlight", (s, e) =>
+      {
+        HighlightSettings.Color = HighlightSettings.DefaultColor;
+        HighlightSettings.Width = 4;
+        HighlightSettings.Fill = true;
+        Refresh();
+      });
+
+      GH_DocumentObject.Menu_AppendSeparator(menu);
       for (int i = 0; i < 4; i++)
       {
         int corner = i;
         GH_DocumentObject.Menu_AppendItem(menu, CornerNames[i], (s, e) => { Corner = corner; Owner?.Refresh(); }, true, Corner == i);
       }
+    }
+
+    void Refresh()
+    {
+      RhinoDoc.ActiveDoc?.Views.Redraw();
+      Owner?.Refresh();
     }
 
     // ---------- infobulle (uniquement pour le détail d'une erreur) ----------
