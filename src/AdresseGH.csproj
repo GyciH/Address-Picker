@@ -6,7 +6,7 @@
     <TargetExt>.gha</TargetExt>
     <AssemblyName>AdresseGH</AssemblyName>
     <RootNamespace>AdresseGH</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.2.0</Version>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <NoWarn>$(NoWarn);CA1416;NU1701</NoWarn>
     <WinDesktopRef>7.0.20</WinDesktopRef>
@@ -17,8 +17,8 @@
     <PackageDownload Include="Microsoft.WindowsDesktop.App.Ref" Version="[$(WinDesktopRef)]" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="System.Windows.Forms.Primitives"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.Primitives.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="System.Drawing.Common"><HintPath>$(NuGetPackageRoot)microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Drawing.Common.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Windows.Forms"><HintPath>$([MSBuild]::EnsureTrailingSlash($(NuGetPackageRoot)))microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Windows.Forms.Primitives"><HintPath>$([MSBuild]::EnsureTrailingSlash($(NuGetPackageRoot)))microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Windows.Forms.Primitives.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Drawing.Common"><HintPath>$([MSBuild]::EnsureTrailingSlash($(NuGetPackageRoot)))microsoft.windowsdesktop.app.ref/$(WinDesktopRef)/ref/net7.0/System.Drawing.Common.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
 </Project>

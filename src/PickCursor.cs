@@ -20,7 +20,7 @@ namespace AdresseGH
 
     public PickCursor()
     {
-      SetCommandPrompt("Adresse GH : cliquez une géométrie Grasshopper (Échap pour annuler)");
+      SetCommandPrompt("Adresse GH: pick a Grasshopper preview (Esc to cancel)");
       SetCursor(Rhino.UI.CursorStyle.CrossHair);
       PermitObjectSnap(false);
       PermitOrthoSnap(false);
