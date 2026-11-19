@@ -28,8 +28,7 @@ Supported geometry: points, point clouds, curves, surfaces, Breps, extrusions, m
 
 ### Install
 
-- **Package Manager**: in Rhino run `PackageManager`, search for `adressegh`, install, restart Rhino.
-- **Manual**: download `AdresseGH.gha` from the [Releases](https://github.com/GyciH/Address-Picker/releases) page, copy it to `%AppData%\Grasshopper\Libraries`, right-click › Properties › **Unblock**, restart Rhino.
+Download `AdresseGH.gha` from the [Releases](https://github.com/GyciH/Address-Picker/releases) page, copy it to `%AppData%\Grasshopper\Libraries`, right-click › Properties › **Unblock**, restart Rhino.
 
 ### Known limits (v1)
 
@@ -56,8 +55,7 @@ Quel composant dessine cet objet, et où est-il dans l'arbre ? Cliquez une géom
 
 ### Installation
 
-- **Package Manager** : dans Rhino, commande `PackageManager`, chercher `adressegh`, installer, relancer Rhino.
-- **Manuelle** : télécharger `AdresseGH.gha` depuis [Releases](https://github.com/GyciH/Address-Picker/releases), le copier dans `%AppData%\Grasshopper\Libraries`, clic droit › Propriétés › **Débloquer**, relancer Rhino.
+Télécharger `AdresseGH.gha` depuis [Releases](https://github.com/GyciH/Address-Picker/releases), le copier dans `%AppData%\Grasshopper\Libraries`, clic droit › Propriétés › **Débloquer**, relancer Rhino.
 
 ---
 
@@ -70,14 +68,11 @@ dotnet build -c Release
 
 Requires the .NET 8 SDK (or later). The project targets `net7.0` (Rhino 8) and references the `Grasshopper` 8 NuGet package. WinForms and System.Drawing come from the `Microsoft.WindowsDesktop.App.Ref` reference pack, so it also builds on Linux or macOS. Output: `src/bin/Release/net7.0/AdresseGH.gha`.
 
-Yak package: copy the `.gha` next to `yak/manifest.yml` and `yak/icon.png`, then run `"C:\Program Files\Rhino 8\System\Yak.exe" build` in that folder.
-
 ## Repository layout
 
 | Path | Content |
 |---|---|
 | `src/` | Plug-in source: widget, picking, highlight, isolate, cursor |
-| `yak/` | Package Manager manifest and icon |
 | `docs/food4rhino/` | Food4Rhino listing texts (EN/FR) and icons |
 | `docs/maquette-scripteditor.cs` | Original prototype for Rhino 8 ScriptEditor (C#) |
 

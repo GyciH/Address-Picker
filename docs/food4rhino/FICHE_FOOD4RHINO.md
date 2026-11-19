@@ -62,8 +62,7 @@ Adresse GH answers that question directly from the Rhino viewport. Click any Gra
 
 **Installation**
 
-- *Package Manager* (recommended): in Rhino, run `PackageManager`, search for **adressegh**, install, restart Rhino.
-- *Manual*: copy `AdresseGH.gha` to `%AppData%\Grasshopper\Libraries`, right-click › Properties › **Unblock**, restart Rhino.
+Download the zip, copy `AdresseGH.gha` to `%AppData%\Grasshopper\Libraries`, right-click › Properties › **Unblock**, restart Rhino.
 
 ---
 
@@ -99,24 +98,8 @@ Adresse GH répond à cette question directement depuis le viewport Rhino. Cliqu
 
 | Fichier | Usage |
 |---|---|
-| `adressegh-1.0.1-rh8_0-win.yak` | Paquet pour le Package Manager de Rhino |
 | `AdresseGH-1.0.1.zip` | Installation manuelle (`.gha` + README anglais) |
 | `icon_512.png` | Logo de la fiche (aussi en 256 et 64 px) |
-
-**Paquet Yak** : je l'ai assemblé à la main (manifeste + .gha + icône). Avant de le publier, vérifie-le sur ton PC :
-
-```
-"C:\Program Files\Rhino 8\System\Yak.exe" build
-```
-
-Lance cette commande dans un dossier qui contient `manifest.yml`, `AdresseGH.gha` et `icon.png` (le contenu du .yak dézippé). Ensuite :
-
-```
-"C:\Program Files\Rhino 8\System\Yak.exe" login
-"C:\Program Files\Rhino 8\System\Yak.exe" push adressegh-1.0.1-rh8_0-win.yak
-```
-
-La publication sur le serveur Yak et sur Food4Rhino se fait avec ton compte McNeel. Elle est publique et définitive (une version publiée ne peut être que retirée, pas remplacée).
 
 ---
 
